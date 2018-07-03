@@ -1,7 +1,11 @@
 import java.util.ArrayList;
 import java.util.Calendar;
 
-
+/**
+ * 
+ * @author Mariem Khlifi
+ *
+ */
 
 public class Book {
 	
@@ -35,7 +39,34 @@ public class Book {
     public ArrayList<String> getAuthors(){
     	return this.bookAuthor;
     }
-    
+	public void addAuthor(String author) {
+		boolean alreadyIn=false;
+		if (this.bookAuthor!=null) {
+			for (int i=0;i<this.bookAuthor.size();i++) {
+				if (author.equals(this.bookAuthor.get(i)) ){
+					alreadyIn=true;
+				}
+			}
+		}
+		if (alreadyIn==false) {
+			this.bookAuthor.add(author);
+		}
+		
+	}
+	
+	public void deleteAuthor(String author) {
+		boolean alreadyIn=false;
+		if (this.bookAuthor!=null) {
+			for (int i=0;i<this.bookAuthor.size();i++) {
+				if (author.equals(this.bookAuthor.get(i)) ){
+					alreadyIn=true;
+				}
+			}
+		}
+		if (alreadyIn==true) {
+			this.bookAuthor.remove(author);
+		}
+	}    
     public void setName(String name) {
     	this.name=name;
     }
